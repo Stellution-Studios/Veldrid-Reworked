@@ -94,6 +94,10 @@ internal unsafe class VkPipeline : Pipeline {
         rsCi.polygonMode = VkFormats.VdToVkPolygonMode(rsDesc.FillMode);
         rsCi.depthClampEnable = !rsDesc.DepthClipEnabled;
         rsCi.frontFace = rsDesc.FrontFace == FrontFace.Clockwise ? VkFrontFace.Clockwise : VkFrontFace.CounterClockwise;
+        rsCi.depthBiasEnable = rsDesc.DepthBias != 0 || rsDesc.SlopeScaledDepthBias != 0f || rsDesc.DepthBiasClamp != 0f;
+        rsCi.depthBiasConstantFactor = rsDesc.DepthBias;
+        rsCi.depthBiasSlopeFactor = rsDesc.SlopeScaledDepthBias;
+        rsCi.depthBiasClamp = rsDesc.DepthBiasClamp;
         rsCi.lineWidth = 1f;
 
         pipelineCi.pRasterizationState = &rsCi;

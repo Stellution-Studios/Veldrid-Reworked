@@ -802,6 +802,10 @@ internal unsafe class MtlCommandList : CommandList {
                 this._rce.SetTriangleFillMode(this._graphicsPipeline.FillMode);
             }
 
+            if (this._lastGraphicsPipeline == null || !this._graphicsPipeline.DepthBias.Equals(this._lastGraphicsPipeline.DepthBias) || !this._graphicsPipeline.SlopeScaledDepthBias.Equals(this._lastGraphicsPipeline.SlopeScaledDepthBias) || !this._graphicsPipeline.DepthBiasClamp.Equals(this._lastGraphicsPipeline.DepthBiasClamp)) {
+                this._rce.SetDepthBias(this._graphicsPipeline.DepthBias, this._graphicsPipeline.SlopeScaledDepthBias, this._graphicsPipeline.DepthBiasClamp);
+            }
+
             RgbaFloat blendColor = this._graphicsPipeline.BlendColor;
             if (blendColor != this._lastGraphicsPipeline?.BlendColor) {
                 this._rce.SetBlendColor(blendColor.R, blendColor.G, blendColor.B, blendColor.A);
