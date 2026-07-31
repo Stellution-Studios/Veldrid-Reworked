@@ -678,6 +678,17 @@ public static unsafe class ObjectiveCRuntime {
     /// <param name="b">The b value used by this operation.</param>
     [DllImport(_objCLibrary, EntryPoint = "objc_msgSend")]
     public static extern void ObjcMsgSend(IntPtr receiver, Selector selector, uint b);
+    
+    /// <summary>
+    /// Executes the objc msg send logic for this backend.
+    /// </summary>
+    /// <param name="receiver">The receiver value used by this operation.</param>
+    /// <param name="selector">The selector value used by this operation.</param>
+    /// <param name="a">The a value used by this operation.</param>
+    /// <param name="b">The b value used by this operation.</param>
+    /// <param name="c">The c value used by this operation.</param>
+    [DllImport(_objCLibrary, EntryPoint = "objc_msgSend")]
+    public static extern void ObjcMsgSend(IntPtr receiver, Selector selector, float a, float b, float c);
 
     /// <summary>
     /// Executes the objc msg send logic for this backend.
