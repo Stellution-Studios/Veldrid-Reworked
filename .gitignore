@@ -258,10 +258,3 @@ Session.vim
 
 .vscode
 launchSettings.json
-src/Sparkle.Test/content/sprite.png
-/src/Sparkle.Test
-/src/Sparkle
-/src/Stellution
-/src/Bliss
-/src/Bliss.Test
-/src/Bliss.ImGUI
