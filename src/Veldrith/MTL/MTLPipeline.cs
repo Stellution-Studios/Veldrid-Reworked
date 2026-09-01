@@ -45,9 +45,6 @@ internal class MtlPipeline : Pipeline {
         this.CullMode = MtlFormats.VdToMtlCullMode(description.RasterizerState.CullMode);
         this.FrontFace = MtlFormats.VdVoMtlFrontFace(description.RasterizerState.FrontFace);
         this.FillMode = MtlFormats.VdToMtlFillMode(description.RasterizerState.FillMode);
-        this.DepthBias = description.RasterizerState.DepthBias;
-        this.SlopeScaledDepthBias = description.RasterizerState.SlopeScaledDepthBias;
-        this.DepthBiasClamp = description.RasterizerState.DepthBiasClamp;
         this.ScissorTestEnabled = description.RasterizerState.ScissorTestEnabled;
 
         MTLRenderPipelineDescriptor mtlDesc = MTLRenderPipelineDescriptor.New();
@@ -330,21 +327,6 @@ internal class MtlPipeline : Pipeline {
     /// Gets or sets FillMode.
     /// </summary>
     public MTLTriangleFillMode FillMode { get; }
-
-    /// <summary>
-    /// Gets the constant depth bias applied to depth values.
-    /// </summary>
-    public float DepthBias { get; }
-
-    /// <summary>
-    /// Gets the slope-scaled depth bias applied to depth values.
-    /// </summary>
-    public float SlopeScaledDepthBias { get; }
-
-    /// <summary>
-    /// Gets the maximum depth bias value.
-    /// </summary>
-    public float DepthBiasClamp { get; }
 
     /// <summary>
     /// Gets or sets DepthStencilState.

@@ -261,16 +261,6 @@ public struct MTLRenderCommandEncoder {
     public void SetDepthStencilState(MTLDepthStencilState depthStencilState) {
         ObjcMsgSend(this.NativePtr, sel_setDepthStencilState, depthStencilState.NativePtr);
     }
-    
-    /// <summary>
-    /// Sets the depth bias state.
-    /// </summary>
-    /// <param name="depthBias">The constant depth bias value.</param>
-    /// <param name="slopeScale">The slope-scaled depth bias value.</param>
-    /// <param name="clamp">The maximum depth bias value.</param>
-    public void SetDepthBias(float depthBias, float slopeScale, float clamp) {
-        ObjcMsgSend(this.NativePtr, sel_setDepthBias, depthBias, slopeScale, clamp);
-    }
 
     /// <summary>
     /// Sets the depth clip mode value.
@@ -456,12 +446,7 @@ public struct MTLRenderCommandEncoder {
     /// Stores the sel set depth stencil state value used during command execution.
     /// </summary>
     private static readonly Selector sel_setDepthStencilState = "setDepthStencilState:";
-
-    /// <summary>
-    /// Stores the sel set depth bias value used during command execution.
-    /// </summary>
-    private static readonly Selector sel_setDepthBias = "setDepthBias:slopeScale:clamp:";
-
+    
     /// <summary>
     /// Stores the sel set depth clip mode value used during command execution.
     /// </summary>
